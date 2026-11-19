@@ -334,14 +334,12 @@ export const education: EducationInfo = {
       detail: "Science Olympiad Foundation IMO, Level 1.",
     },
     {
-      title: "Gold Medal, SOF National Science Olympiad 2016-17 (Level 1)",
-      detail: "Science Olympiad Foundation NSO, Level 1.",
+      title: "Bronze Medal, SOF International Mathematics Olympiad 2016-17 (Level 2)",
+      detail: "Science Olympiad Foundation IMO, Level 2.",
     },
   ],
 };
 ```
-
-(Bronze in IMO Level 2 2016-17 is intentionally omitted to keep the list to the 3 strongest results — flag to Anmol in the task summary; easy to add as a 4th entry if he wants all four medals shown.)
 
 - [ ] **Step 6: Write `content/skills.ts`**
 
@@ -662,8 +660,8 @@ describe("EducationAchievements", () => {
     render(<EducationAchievements />);
     expect(screen.getByText(/B.E. in Information Technology/)).toBeInTheDocument();
     expect(screen.getByText(/AIR 42/)).toBeInTheDocument();
-    expect(screen.getByText(/International Mathematics Olympiad/)).toBeInTheDocument();
-    expect(screen.getByText(/National Science Olympiad/)).toBeInTheDocument();
+    expect(screen.getByText(/Gold Medal, SOF International Mathematics Olympiad/)).toBeInTheDocument();
+    expect(screen.getByText(/Bronze Medal, SOF International Mathematics Olympiad/)).toBeInTheDocument();
   });
 });
 ```
@@ -1390,5 +1388,5 @@ git commit -m "chore: final build verification pass"
 ## Self-Review Notes
 
 - **Spec coverage:** Site map (Task 1/6), homepage sections incl. corrected Education split (Task 4/5), 6 case studies with text-only content (Task 3/6), visual design system/colors/fonts (Task 1), responsive design (Tasks 1/5/8 verification), technical architecture/typed content/static export (Tasks 1-3, 6, 8), resume download (Task 7), contact links (Task 5) — all covered. Deployment (Vercel) is explicitly out of scope for this plan per spec ("deferred until after build").
-- **Placeholder scan:** No TBD/TODO markers. Olympiad Bronze medal (Level 2) was deliberately left out of the 3-item achievement list for brevity — flagged inline in Task 2 rather than silently dropped; Anmol can add a 4th entry by editing `content/education.ts` directly.
+- **Placeholder scan:** No TBD/TODO markers. Education achievements list is AIR 42 TCS CodeVita, Gold Medal SOF IMO Level 1, and Bronze Medal SOF IMO Level 2 (National Science Olympiad gold excluded per Anmol's request).
 - **Type consistency:** `Project`, `ExperienceEntry`, `EducationInfo`, `SkillGroup` defined once in `content/types.ts` (Tasks 2-3) and referenced identically in every component (Tasks 4-7).
