@@ -178,7 +178,9 @@ git commit -m "chore: scaffold Next.js app with Tailwind brand theme and Vitest"
 
 ---
 
-## Task 2: Shared Content Types + Experience/Education/Skills Data
+## Task 2: Shared Content Types + Experience/Education/Skills Data ✅ DONE (commit `97a1a5e`)
+
+> **Status:** Complete. Executed exactly as written, no deviations. 5/5 tests pass, `tsc --noEmit` clean.
 
 **Files:**
 - Create: `content/types.ts`
@@ -191,7 +193,7 @@ git commit -m "chore: scaffold Next.js app with Tailwind brand theme and Vitest"
 - Produces types: `ExperienceEntry { title: string; company: string; dates: string; highlights: string[] }`, `Achievement { title: string; detail: string }`, `EducationInfo { degree: string; institution: string; dates: string; location: string; achievements: Achievement[] }`, `SkillGroup { category: string; items: string[] }`.
 - Produces data: `experience: ExperienceEntry[]` (3 entries), `education: EducationInfo`, `skills: SkillGroup[]` (5 groups) — consumed by Task 4/5 components.
 
-- [ ] **Step 1: Write failing tests for data shape**
+- [x] **Step 1: Write failing tests for data shape**
 
 Create `content/__tests__/experience.test.ts`:
 
@@ -250,14 +252,14 @@ describe("skills data", () => {
 });
 ```
 
-- [ ] **Step 2: Run tests to verify they fail**
+- [x] **Step 2: Run tests to verify they fail**
 
 ```bash
 npm run test
 ```
 Expected: FAIL — modules `../experience`, `../education`, `../skills` not found.
 
-- [ ] **Step 3: Write `content/types.ts`**
+- [x] **Step 3: Write `content/types.ts`**
 
 ```ts
 export interface ExperienceEntry {
@@ -286,7 +288,7 @@ export interface SkillGroup {
 }
 ```
 
-- [ ] **Step 4: Write `content/experience.ts`**
+- [x] **Step 4: Write `content/experience.ts`**
 
 ```ts
 import type { ExperienceEntry } from "./types";
@@ -324,7 +326,7 @@ export const experience: ExperienceEntry[] = [
 ];
 ```
 
-- [ ] **Step 5: Write `content/education.ts`**
+- [x] **Step 5: Write `content/education.ts`**
 
 ```ts
 import type { EducationInfo } from "./types";
@@ -351,7 +353,7 @@ export const education: EducationInfo = {
 };
 ```
 
-- [ ] **Step 6: Write `content/skills.ts`**
+- [x] **Step 6: Write `content/skills.ts`**
 
 ```ts
 import type { SkillGroup } from "./types";
@@ -368,14 +370,14 @@ export const skills: SkillGroup[] = [
 ];
 ```
 
-- [ ] **Step 7: Run tests to verify they pass**
+- [x] **Step 7: Run tests to verify they pass**
 
 ```bash
 npm run test
 ```
 Expected: PASS (all 3 new test files).
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add content/
