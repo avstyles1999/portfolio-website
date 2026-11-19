@@ -42,7 +42,7 @@ export const projects: Project[] = [
   {
     slug: "ai-accountant-platform",
     title: "AI Accountant Finance Platform",
-    oneLiner: "A Zoho Creator finance automation platform automating bank reconciliation for accounting teams.",
+    oneLiner: "A Zoho Creator platform that automates core accounting work, from invoice processing to bank reconciliation and monthly statements.",
     techStack: ["Zoho Creator", "Deluge", "Zoho WorkDrive API", "Zoho Creator REST API"],
     standoutMetric: "Led the platform end to end; 90+ Deluge functions in the reconciliation pipeline",
     order: 3,
@@ -51,12 +51,11 @@ export const projects: Project[] = [
     problem:
       "Accounting teams spend much of their time on repetitive, error-prone work: keying in purchase invoices, raising sales invoices, matching bank transactions to invoices, catching duplicates, and compiling monthly statements. Done by hand, this work is slow, inconsistent, and hard to audit when something needs to be traced back.",
     approach:
-      "As project lead, I set the platform's direction and coordinated delivery across its finance workflows. Hands-on, I built the bank statement ingestion and reconciliation pipeline end to end: 90+ Deluge functions covering statement ingestion, a multi-signal scoring engine for bank-to-invoice matching, payment allocation, duplicate-invoice detection, and multi-bank statement de-duplication, integrated with Zoho WorkDrive and Creator REST APIs. A centralized audit-event trail records every automated decision, so a CA-facing review view can verify or override matches with full context. I also implemented parts of the purchase invoice processing pipeline. Day-to-day development uses AI coding tools (Claude Code, Codex) with Git-mirrored source, agent instruction files, and task templates, keeping AI-assisted changes reviewable and governed rather than opaque.",
+      "As project lead, I set the platform's direction and coordinated delivery across its finance workflows. Hands-on, I built the bank statement ingestion and reconciliation pipeline end to end: 90+ Deluge functions covering statement ingestion, a multi-signal scoring engine for bank-to-invoice matching, payment allocation, duplicate-invoice detection, and multi-bank statement de-duplication, integrated with Zoho WorkDrive and Creator REST APIs. A centralized audit-event trail records every automated decision, so a CA-facing review view can verify or override matches with full context. I also implemented parts of the purchase invoice processing pipeline.",
     impact: [
       "Automates major finance workflows: purchase invoices, sales invoices, bank reconciliation, and monthly statements.",
       "90+ Deluge functions in production covering bank statement ingestion, matching, de-duplication, and audit trail.",
       "Automated multi-signal scoring reduces manual bank-to-invoice matching effort.",
-      "Governed AI-assisted development workflow (Git-mirrored source, agent instructions, task templates) used in day-to-day delivery.",
     ],
   },
   {
