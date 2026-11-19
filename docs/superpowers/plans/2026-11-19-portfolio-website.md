@@ -20,25 +20,35 @@
 
 ---
 
-## Task 1: Project Scaffolding
+## Task 1: Project Scaffolding ✅ DONE (commit `c8463cd`)
+
+> **Status:** Complete. Executed with deviations, recorded below and in the ledger (`.superpowers/sdd/2026-11-19-portfolio-website/progress.md`):
+> - `create-next-app@latest` now produces Next 16 + Tailwind 4 and refuses a non-empty directory, so the files were created by hand with pinned versions: `next@15`, `react@19`, `tailwindcss@3`, `eslint@8` + `eslint-config-next@15`.
+> - `vitest@5.1.1` (latest) failed every test, even a trivial one, so the test toolchain was pinned to `vitest@3`, `@vitejs/plugin-react@4`, `@testing-library/jest-dom@6`, `jsdom@26`.
+> - `next.config.ts` sets `output: "export"` and `images.unoptimized: true` to enforce the static-export constraint.
+> - Also added: `.gitignore`, `"types": ["vitest/globals"]` in `tsconfig.json`.
+> - Known: build prints one ESLint *warning* (unused `screen` import in the smoke test). It is not an error.
 
 **Files:**
-- Create: `package.json`, `tsconfig.json`, `next.config.ts`, `tailwind.config.ts`, `postcss.config.js`, `.eslintrc.json`, `vitest.config.ts`
+- Create: `package.json`, `tsconfig.json`, `next.config.ts`, `tailwind.config.ts`, `postcss.config.js`, `.eslintrc.json`, `vitest.config.ts`, `.gitignore`
 - Create: `app/layout.tsx`, `app/globals.css`, `app/page.tsx`
-- Create: `vitest.setup.ts`
+- Create: `vitest.setup.ts`, `app/__tests__/page.smoke.test.tsx`
 
 **Interfaces:**
 - Produces: Tailwind theme tokens `brand.bg` (#FAFAFA), `brand.surface` (#FFFFFF), `brand.text` (#1A1A1A), `brand.muted` (#6B7280), `brand.border` (#E5E7EB), `brand.accent` (#047857), `brand.accentDark` (#065F46), used by every later component.
 - Produces: root layout exporting `metadata` object consumed implicitly by all pages.
 
-- [ ] **Step 1: Initialize Next.js app**
+- [x] **Step 1: Initialize Next.js app**
+
+*As executed:* `create-next-app` was not used (see Status above). Instead, `package.json` was written by hand with scripts `dev`, `build`, `start`, `lint`, `test`, and dependencies installed pinned:
 
 ```bash
-npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=false --import-alias "@/*" --use-npm --no-turbopack
+npm install next@15 react@19 react-dom@19
+npm install -D typescript@5 @types/node@22 @types/react@19 @types/react-dom@19 tailwindcss@3 postcss@8 autoprefixer@10 eslint@8 eslint-config-next@15
 ```
-Answer prompts to keep existing `docs/` and CV file in place (do not overwrite them).
+`tsconfig.json`, `next.config.ts` (`output: "export"`), `postcss.config.js` (tailwindcss + autoprefixer), `.eslintrc.json` (`next/core-web-vitals`, `next/typescript`), `app/globals.css` (`@tailwind` directives) and `.gitignore` were created by hand with standard Next 15 contents.
 
-- [ ] **Step 2: Configure Tailwind theme tokens**
+- [x] **Step 2: Configure Tailwind theme tokens**
 
 Edit `tailwind.config.ts`:
 
@@ -70,7 +80,7 @@ const config: Config = {
 export default config;
 ```
 
-- [ ] **Step 3: Set up Inter font and base layout**
+- [x] **Step 3: Set up Inter font and base layout**
 
 Edit `app/layout.tsx`:
 
@@ -98,10 +108,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 ```
 
-- [ ] **Step 4: Install test tooling**
+- [x] **Step 4: Install test tooling**
 
 ```bash
-npm install -D vitest @testing-library/react @testing-library/jest-dom jsdom @vitejs/plugin-react
+npm install -D vitest@3 @vitejs/plugin-react@4 @testing-library/react @testing-library/dom @testing-library/jest-dom@6 jsdom@26
 ```
 
 Create `vitest.config.ts`:
@@ -132,7 +142,7 @@ import "@testing-library/jest-dom/vitest";
 
 Add to `package.json` scripts: `"test": "vitest run"`.
 
-- [ ] **Step 5: Write a smoke test for the root layout font/color setup**
+- [x] **Step 5: Write a smoke test for the root layout font/color setup**
 
 Create `app/__tests__/page.smoke.test.tsx`:
 
@@ -151,7 +161,7 @@ describe("Homepage scaffold", () => {
 
 Replace `app/page.tsx` with a minimal placeholder returning `<main>Portfolio</main>` for now (later tasks replace this).
 
-- [ ] **Step 6: Run the test and the build to verify scaffold works**
+- [x] **Step 6: Run the test and the build to verify scaffold works**
 
 ```bash
 npm run test
@@ -159,7 +169,7 @@ npm run build
 ```
 Expected: test passes, build succeeds with no TypeScript/ESLint errors.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add -A
