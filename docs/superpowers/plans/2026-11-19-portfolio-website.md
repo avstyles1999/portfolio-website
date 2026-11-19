@@ -386,7 +386,7 @@ git commit -m "feat: add experience, education, and skills content data"
 
 ---
 
-## Task 3: Project Case Study Content Data
+## Task 3: Project Case Study Content Data ✅ DONE (commit `e3503d3`)
 
 **Files:**
 - Modify: `content/types.ts` (add `Project` type)
@@ -397,7 +397,7 @@ git commit -m "feat: add experience, education, and skills content data"
 - Produces type: `Project { slug: string; title: string; oneLiner: string; techStack: string[]; standoutMetric: string; overview: string; problem: string; approach: string; impact: string[]; order: number }`.
 - Produces data: `projects: Project[]` (6 entries, ordered per spec) — consumed by Task 5 (grid) and Task 6 (case study pages).
 
-- [ ] **Step 1: Write failing test for project data**
+- [x] **Step 1: Write failing test for project data**
 
 Create `content/__tests__/projects.test.ts`:
 
@@ -435,14 +435,14 @@ describe("projects data", () => {
 });
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 ```bash
 npm run test
 ```
 Expected: FAIL — `../projects` not found.
 
-- [ ] **Step 3: Add `Project` type to `content/types.ts`**
+- [x] **Step 3: Add `Project` type to `content/types.ts`**
 
 ```ts
 export interface Project {
@@ -459,7 +459,7 @@ export interface Project {
 }
 ```
 
-- [ ] **Step 4: Write `content/projects.ts` with all 6 case studies**
+- [x] **Step 4: Write `content/projects.ts` with all 6 case studies**
 
 ```ts
 import type { Project } from "./types";
@@ -581,14 +581,14 @@ export const projects: Project[] = [
 ];
 ```
 
-- [ ] **Step 5: Run tests to verify they pass**
+- [x] **Step 5: Run tests to verify they pass**
 
 ```bash
 npm run test
 ```
 Expected: PASS (all project data tests).
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add content/
