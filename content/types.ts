@@ -22,3 +22,16 @@ export interface SkillGroup {
   category: string;
   items: string[];
 }
+
+export interface Project {
+  slug: string;
+  title: string;
+  oneLiner: string;
+  techStack: string[];
+  standoutMetric: string;
+  overview: string;
+  problem: string;
+  approach: string;
+  impact: string[];
+  order: number;
+}
