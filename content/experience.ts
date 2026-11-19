@@ -8,7 +8,7 @@ export const experience: ExperienceEntry[] = [
     highlights: [
       "Lead a cross-functional team of 4-5 engineers delivering production-grade, safety-critical transportation software; own sprint planning, code reviews, and CI pipelines.",
       "Built a safety-critical, constraint-aware routing engine in Python with core CBTC/APM protocol features, driving real-time control of 100+ concurrent PRT vehicles within a 200-300ms latency budget.",
-      "Lead development of an AI Accountant finance platform on Zoho Creator, owning the bank reconciliation module end to end.",
+      "Lead an AI Accountant finance automation platform on Zoho Creator; personally built the bank statement ingestion and reconciliation pipeline and parts of purchase invoice processing.",
       "Co-developed a browser-based PRT network simulator (Next.js/React/TypeScript) used directly in client pitches and fleet sizing.",
     ],
   },
@@ -27,7 +27,7 @@ export const experience: ExperienceEntry[] = [
     company: "Goldman Sachs",
     dates: "07/2021 – 02/2023",
     highlights: [
-      "Developed a full-stack TCA analytics platform (React + Flask + KDB+) used by 50+ internal users for post-trade analysis.",
+      "Developed a full-stack TCA analytics platform (React + Flask + KDB+) used by 20+ internal users for post-trade analysis.",
       "Enhanced wheel-order detection logic, improving classification accuracy by 20-30% and reducing false positives.",
     ],
   },

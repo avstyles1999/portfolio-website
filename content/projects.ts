@@ -44,16 +44,17 @@ export const projects: Project[] = [
     title: "AI Accountant Finance Platform",
     oneLiner: "A Zoho Creator finance automation platform automating bank reconciliation for accounting teams.",
     techStack: ["Zoho Creator", "Deluge", "Zoho WorkDrive API", "Zoho Creator REST API"],
-    standoutMetric: "90+ Deluge functions powering automated reconciliation",
+    standoutMetric: "Led the platform end to end; 90+ Deluge functions in the reconciliation pipeline",
     order: 3,
     overview:
-      "An AI-driven finance automation platform built on Zoho Creator, where I own the bank and reconciliation module: bank statement ingestion, transaction matching, payment allocation, and a CA-facing review view.",
+      "An AI-driven finance automation platform built on Zoho Creator that automates core accounting workflows: purchase invoice processing, sales invoice creation, bank statement ingestion and reconciliation, and monthly statement generation. I lead the project, personally built the entire bank statement ingestion and reconciliation pipeline, and implemented parts of the purchase invoice processing pipeline.",
     problem:
-      "Manual bank reconciliation — matching bank transactions to invoices, catching duplicate invoices, and reconciling across multiple bank statements — is slow and error-prone for accounting teams, and lacks a clear audit trail when something needs to be traced back.",
+      "Accounting teams spend much of their time on repetitive, error-prone work: keying in purchase invoices, raising sales invoices, matching bank transactions to invoices, catching duplicates, and compiling monthly statements. Done by hand, this work is slow, inconsistent, and hard to audit when something needs to be traced back.",
     approach:
-      "Built 90+ Deluge functions including a multi-signal scoring engine for bank-to-invoice matching, duplicate-invoice detection, and multi-bank statement de-duplication, all integrated with Zoho WorkDrive and Creator REST APIs. A centralized audit-event trail records every automated decision so a CA-facing review view can verify or override matches with full context. Day-to-day development on this platform uses AI coding tools (Claude Code, Codex) with Git-mirrored source, agent instruction files, and task templates, keeping AI-assisted changes reviewable and governed rather than opaque.",
+      "As project lead, I set the platform's direction and coordinated delivery across its finance workflows. Hands-on, I built the bank statement ingestion and reconciliation pipeline end to end: 90+ Deluge functions covering statement ingestion, a multi-signal scoring engine for bank-to-invoice matching, payment allocation, duplicate-invoice detection, and multi-bank statement de-duplication, integrated with Zoho WorkDrive and Creator REST APIs. A centralized audit-event trail records every automated decision, so a CA-facing review view can verify or override matches with full context. I also implemented parts of the purchase invoice processing pipeline. Day-to-day development uses AI coding tools (Claude Code, Codex) with Git-mirrored source, agent instruction files, and task templates, keeping AI-assisted changes reviewable and governed rather than opaque.",
     impact: [
-      "90+ Deluge functions in production covering matching, de-duplication, and audit trail.",
+      "Automates major finance workflows: purchase invoices, sales invoices, bank reconciliation, and monthly statements.",
+      "90+ Deluge functions in production covering bank statement ingestion, matching, de-duplication, and audit trail.",
       "Automated multi-signal scoring reduces manual bank-to-invoice matching effort.",
       "Governed AI-assisted development workflow (Git-mirrored source, agent instructions, task templates) used in day-to-day delivery.",
     ],
@@ -61,55 +62,57 @@ export const projects: Project[] = [
   {
     slug: "network-operating-system",
     title: "Network Operating System",
-    oneLiner: "A distributed network operating system coordinating real-time vehicle communication, routing, and automation.",
+    oneLiner: "The central brain of the PRT network: serving ride requests, dispatching pods, and running fleet operations.",
     techStack: ["Node.js", "Express", "MongoDB"],
-    standoutMetric: "30-40% fewer routing conflicts via zone-based partitioning",
+    standoutMetric: "Near-zero hazardous incidents across simulations and trials",
     order: 4,
     overview:
-      "A distributed network operating system (NOS), built on Node.js, Express, and MongoDB, that manages real-time vehicle communication, routing, and automation across a PRT fleet.",
+      "The Network Operating System (NOS) is the brain of the entire PRT network. Built on Node.js, Express, and MongoDB, it takes in concurrent passenger ride requests, chooses the best pod to serve each one, processes live vehicle telemetry, and manages fleet operations like charging and maintenance.",
     problem:
-      "Coordinating many vehicles across a shared track network in real time creates contention: vehicles can conflict over the same track segments, and routine fleet operations like maintenance and charging need to be scheduled without creating safety incidents or unplanned downtime.",
+      "A PRT network serves many passengers at once with a shared fleet of autonomous pods. Every request has to be matched to the right pod quickly, while the system keeps an up-to-date picture of where every vehicle is and what state it is in, and keeps the fleet charged and maintained without taking too many pods out of service or creating safety risks.",
     approach:
-      "Implemented zone-based traffic partitioning to localize routing decisions and reduce cross-zone contention, backed by MongoDB for persistence of vehicle and network state and an Express-based API layer coordinating communication between vehicles and the rest of the system. Automated maintenance scheduling and vehicle charging so these routine operations run without manual coordination, with safety constraints built into the automation rather than bolted on afterward.",
+      "The NOS handles many user requests at once and, for each one, picks the best pod to serve it based on the current state of the fleet. A telemetry layer ingests live vehicle data so dispatch decisions always reflect where each pod is and what condition it is in. MongoDB stores vehicle and network state, and an Express-based API layer coordinates communication between vehicles, operator tools, and the rest of the system. Zone-based traffic partitioning keeps coordination local and reduces contention between zones. Charging and maintenance scheduling are automated so pods cycle out of service without manual coordination, with safety constraints built into the automation rather than bolted on afterward.",
     impact: [
+      "Serves concurrent passenger requests and dispatches the best available pod to each one.",
       "Reduced routing conflicts by 30-40% and improved throughput via zone-based partitioning.",
-      "Automated maintenance scheduling and charging contributed to near-zero hazardous incidents across simulations and trials.",
+      "Automated charging and maintenance scheduling contributed to near-zero hazardous incidents across simulations and trials.",
     ],
   },
   {
     slug: "diagnostic-watchdog",
     title: "Diagnostic Watchdog & Monitoring Systems",
     oneLiner: "A multi-component health monitoring system covering vehicles, control software, and UIs.",
-    techStack: ["Python", "Systemd", "Linux"],
+    techStack: ["Python", "Node.js", "React", "Systemd", "Linux"],
     standoutMetric: "50-60% reduction in mean time to detection",
     order: 5,
     overview:
-      "A multi-component health monitoring and watchdog system covering the Network Operating System, vehicles, and operator/user-facing UIs, built to catch problems before they became incidents.",
+      "A multi-component health monitoring and watchdog system covering the Network Operating System, vehicles, and operator/user-facing UIs, built to catch problems before they became incidents, with a dashboard where the team can view alerts and errors.",
     problem:
       "In a safety-critical, distributed vehicle system, failures in any one component (a vehicle, the NOS, or a UI) can go unnoticed until they cascade into a larger incident, and manual log review is too slow to catch issues in time to act.",
     approach:
-      "Designed a diagnostic and watchdog service in Python that performs automated log parsing across NOS, vehicle, and UI components, with alerting and remediation workflows wired directly into the detection pipeline so that known failure patterns trigger automated recovery actions rather than waiting on a human responder.",
+      "Designed a diagnostic and watchdog service in Python that performs automated log parsing across NOS, vehicle, and UI components, with alerting and remediation workflows wired directly into the detection pipeline so that known failure patterns trigger automated recovery actions rather than waiting on a human responder. A Node.js backend serves the collected alerts and errors to a React dashboard, giving the team one place to see system health across all components.",
     impact: [
       "Reduced mean time to detection (MTTD) by 50-60%.",
       "Reduced overall system downtime by ~50-60% through automated alerting and remediation.",
       "Enabled automated alerts and recovery actions across NOS, vehicles, and UIs.",
+      "React dashboard gives a single view of alerts and errors across all monitored components.",
     ],
   },
   {
     slug: "goldman-tca-platform",
-    title: "Goldman Sachs TCA Analytics Platform",
-    oneLiner: "A full-stack transaction cost analysis platform used by 50+ internal analysts for post-trade analysis.",
+    title: "TCA Analytics Platform",
+    oneLiner: "A full-stack transaction cost analysis platform used by 20+ internal analysts for post-trade analysis.",
     techStack: ["React", "Flask", "KDB+"],
-    standoutMetric: "50+ internal users, millions of trade records processed daily",
+    standoutMetric: "20+ internal users, millions of trade records processed daily",
     order: 6,
     overview:
-      "A full-stack Transaction Cost Analysis (TCA) platform built with React, Flask, and KDB+, used by more than 50 internal users at Goldman Sachs for post-trade analysis.",
+      "A full-stack Transaction Cost Analysis (TCA) platform built with React, Flask, and KDB+, used by more than 20 internal users at Goldman Sachs for post-trade analysis.",
     problem:
       "Post-trade analysts needed fast, accurate transaction cost metrics over millions of trade records per day, including correctly classifying complex order types like wheel orders, under tight regulatory and client reporting deadlines.",
     approach:
       "Built the platform end to end: a Flask backend querying KDB+ (a column-store time-series database used heavily in trading infrastructure for its query performance over large tick/trade datasets) to keep analytics queries fast even over millions of daily trade records, and a React frontend surfacing TCA metrics to analysts. Improved the wheel-order detection logic specifically to reduce misclassification, which had been generating false positives in cost analysis.",
     impact: [
-      "Adopted by 50+ internal users for day-to-day post-trade analysis.",
+      "Adopted by 20+ internal users for day-to-day post-trade analysis.",
       "Processed millions of trade records daily with low-latency query performance.",
       "Improved wheel-order classification accuracy by 20-30%, reducing false positives.",
     ],
