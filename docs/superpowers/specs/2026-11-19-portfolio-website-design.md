@@ -81,7 +81,7 @@ Six case studies, each its own page at `/projects/[slug]`:
 | `prt-network-simulator` | PRT Network Simulator (Next.js/React/TypeScript) |
 | `realtime-routing-engine` | Real-time Routing & Vehicle Control Engine (Python, CBTC/APM) |
 | `ai-accountant-platform` | AI Accountant Finance Platform (Zoho Creator/Deluge) |
-| `network-operating-system` | Network Operating System (NOS) |
+| `network-operating-system` | Network Operating System (Node.js/Express/MongoDB) |
 | `diagnostic-watchdog` | Diagnostic Watchdog & Monitoring Systems |
 | `goldman-tca-platform` | Goldman Sachs TCA Analytics Platform (React/Flask/KDB+) |
 
