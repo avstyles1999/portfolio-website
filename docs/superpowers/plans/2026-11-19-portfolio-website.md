@@ -180,7 +180,7 @@ git commit -m "chore: scaffold Next.js app with Tailwind brand theme and Vitest"
 
 ## Task 2: Shared Content Types + Experience/Education/Skills Data ✅ DONE (commit `97a1a5e`)
 
-> **Status:** Complete. Executed exactly as written, no deviations. 5/5 tests pass, `tsc --noEmit` clean.
+> **Status:** Complete. Executed as written; 5/5 tests pass, `tsc --noEmit` clean. **Later content edit (user request):** Team Lead role gained a 4th highlight on the Routing Engine (2nd position); skills added `Zia` (AI Tools & Low-Code) and `FastAPI` (Frameworks & Tools). The code blocks below show the original plan text; `content/` is the source of truth.
 
 **Files:**
 - Create: `content/types.ts`

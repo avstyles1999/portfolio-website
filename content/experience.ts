@@ -7,6 +7,7 @@ export const experience: ExperienceEntry[] = [
     dates: "04/2024 – Present",
     highlights: [
       "Lead a cross-functional team of 4-5 engineers delivering production-grade, safety-critical transportation software; own sprint planning, code reviews, and CI pipelines.",
+      "Built a safety-critical, constraint-aware routing engine in Python with core CBTC/APM protocol features, driving real-time control of 100+ concurrent PRT vehicles within a 200-300ms latency budget.",
       "Lead development of an AI Accountant finance platform on Zoho Creator, owning the bank reconciliation module end to end.",
       "Co-developed a browser-based PRT network simulator (Next.js/React/TypeScript) used directly in client pitches and fleet sizing.",
     ],
