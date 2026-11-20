@@ -40,4 +40,11 @@ describe("Header", () => {
     expect(tokens.filter((t) => t.startsWith("group-hover:"))).toEqual([]);
     expect(tokens).toContain("[@media(hover:hover)]:group-hover:scale-105");
   });
+
+  it("logo name only turns green on hover on devices that really hover (no stuck colour after a tap)", () => {
+    render(<Header />);
+    const tokens = screen.getByText("Anmol Verma").className.split(/\s+/);
+    expect(tokens.filter((t) => t.startsWith("group-hover:"))).toEqual([]);
+    expect(tokens).toContain("[@media(hover:hover)]:group-hover:text-brand-accent");
+  });
 });

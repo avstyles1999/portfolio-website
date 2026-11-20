@@ -31,7 +31,7 @@ export default function Header() {
           >
             AV
           </span>
-          <span className="font-semibold tracking-tight transition-colors group-hover:text-brand-accent">
+          <span className="font-semibold tracking-tight transition-colors [@media(hover:hover)]:group-hover:text-brand-accent">
             Anmol Verma
           </span>
         </Link>
