@@ -820,7 +820,7 @@ git commit -m "feat: add Hero, About, ExperienceTimeline, EducationAchievements 
 - Consumes: `projects` from `content/projects.ts`, `skills` from `content/skills.ts` (both from Task 2/3); `Hero`, `About`, `ExperienceTimeline`, `EducationAchievements` (Task 4).
 - Produces: fully assembled `app/page.tsx` homepage.
 
-- [ ] **Step 1: Write failing tests**
+- [x] **Step 1: Write failing tests**
 
 Create `components/__tests__/ProjectsGrid.test.tsx`:
 
@@ -897,14 +897,14 @@ describe("Homepage", () => {
 
 Delete the old `app/__tests__/page.smoke.test.tsx` from Task 1 (superseded by this test).
 
-- [ ] **Step 2: Run tests to verify they fail**
+- [x] **Step 2: Run tests to verify they fail**
 
 ```bash
 npm run test
 ```
 Expected: FAIL — `ProjectsGrid`, `Skills`, `Contact` don't exist; `page.test.tsx` fails on missing sections.
 
-- [ ] **Step 3: Implement `components/ProjectCard.tsx`**
+- [x] **Step 3: Implement `components/ProjectCard.tsx`**
 
 ```tsx
 import Link from "next/link";
@@ -931,7 +931,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 }
 ```
 
-- [ ] **Step 4: Implement `components/ProjectsGrid.tsx`**
+- [x] **Step 4: Implement `components/ProjectsGrid.tsx`**
 
 ```tsx
 import { projects } from "@/content/projects";
@@ -952,7 +952,7 @@ export default function ProjectsGrid() {
 }
 ```
 
-- [ ] **Step 5: Implement `components/Skills.tsx`**
+- [x] **Step 5: Implement `components/Skills.tsx`**
 
 ```tsx
 import { skills } from "@/content/skills";
@@ -980,7 +980,7 @@ export default function Skills() {
 }
 ```
 
-- [ ] **Step 6: Implement `components/Contact.tsx`**
+- [x] **Step 6: Implement `components/Contact.tsx`**
 
 ```tsx
 export default function Contact() {
@@ -1003,7 +1003,7 @@ export default function Contact() {
 }
 ```
 
-- [ ] **Step 7: Assemble `app/page.tsx`**
+- [x] **Step 7: Assemble `app/page.tsx`**
 
 ```tsx
 import Hero from "@/components/Hero";
@@ -1031,14 +1031,14 @@ export default function Page() {
 
 Delete `app/__tests__/page.smoke.test.tsx`.
 
-- [ ] **Step 8: Run tests to verify they pass**
+- [x] **Step 8: Run tests to verify they pass**
 
 ```bash
 npm run test
 ```
 Expected: PASS for all homepage-related tests.
 
-- [ ] **Step 9: Commit**
+- [x] **Step 9: Commit**
 
 ```bash
 git add -A
