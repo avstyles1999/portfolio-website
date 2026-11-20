@@ -1100,7 +1100,7 @@ git commit -m "feat: assemble full homepage with projects grid, skills, and cont
 - Consumes: `projects` from `content/projects.ts` (Task 3).
 - Produces: static route generating one page per project slug, with `generateStaticParams` and `generateMetadata`.
 
-- [ ] **Step 1: Write failing tests**
+- [x] **Step 1: Write failing tests**
 
 Create `app/projects/__tests__/slug.test.tsx`:
 
@@ -1140,14 +1140,14 @@ describe("Case study page", () => {
 });
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 ```bash
 npm run test
 ```
 Expected: FAIL — `app/projects/[slug]/page.tsx` doesn't exist.
 
-- [ ] **Step 3: Implement `components/CaseStudyNav.tsx`**
+- [x] **Step 3: Implement `components/CaseStudyNav.tsx`**
 
 ```tsx
 import Link from "next/link";
@@ -1180,7 +1180,7 @@ export default function CaseStudyNav({ currentOrder }: { currentOrder: number })
 }
 ```
 
-- [ ] **Step 4: Implement `app/projects/[slug]/page.tsx`**
+- [x] **Step 4: Implement `app/projects/[slug]/page.tsx`**
 
 ```tsx
 import { notFound } from "next/navigation";
@@ -1253,14 +1253,14 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 }
 ```
 
-- [ ] **Step 5: Run tests to verify they pass**
+- [x] **Step 5: Run tests to verify they pass**
 
 ```bash
 npm run test
 ```
 Expected: PASS for all case study route tests.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add app/projects/ components/CaseStudyNav.tsx
