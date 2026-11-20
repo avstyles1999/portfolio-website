@@ -599,6 +599,8 @@ git commit -m "feat: add 6 project case study content entries"
 
 ## Task 4: Homepage Hero, About, Experience, Education Components ✅ DONE (commit `0574173`)
 
+> **Status:** Complete. Executed as written except `{entry.company}` is wrapped in its own `<span>` so the test's exact text match works. **Later edits (user feedback during Task 5):** all four components were restyled and reworded — see Task 5's status block. The code blocks below show the original plan text; `components/` is the source of truth.
+
 **Files:**
 - Create: `components/Hero.tsx`, `components/About.tsx`, `components/ExperienceTimeline.tsx`, `components/EducationAchievements.tsx`
 - Test: `components/__tests__/Hero.test.tsx`, `components/__tests__/About.test.tsx`, `components/__tests__/ExperienceTimeline.test.tsx`, `components/__tests__/EducationAchievements.test.tsx`
@@ -809,7 +811,31 @@ git commit -m "feat: add Hero, About, ExperienceTimeline, EducationAchievements 
 
 ---
 
-## Task 5: Projects Grid, Skills, Contact Components + Homepage Assembly
+## Task 5: Projects Grid, Skills, Contact Components + Homepage Assembly ✅ DONE (commits `f1f53df` → `d8f0b45`)
+
+> **Status:** Complete. Steps 1–9 executed as written (`f1f53df`). The user then reviewed the page in the browser and asked for the changes below, made in follow-up commits `fd8849f`, `cebcc6d`, `d454383`, `d8f0b45`. Each one has a test. The code blocks below show the original plan text; `components/` and `app/page.tsx` are the source of truth.
+>
+> **Content changes**
+> - Hero tagline: removed "for transportation" and "finance" → "I build real-time, safety-critical systems — and lead the teams that ship them — alongside AI-driven automation."
+> - About: removed "on Zoho Creator" and the team-by-team fandom list; the sentence now ends "…and I'm a die-hard cricket and football fan." (Zoho Creator stays in the AI Accountant project and in Skills.)
+> - Contact: new line under the heading, "Open to conversations about real-time systems, engineering leadership, and automation." (added by Claude, not yet confirmed by the user).
+> - Education: no school education added (user decision: not relevant at this career stage). The degree and the achievements are now separate cards, and each achievement shows its `detail` line.
+>
+> **Layout and order**
+> - Homepage order is now Hero → About → **Contact ("Let's talk")** → Experience → Education & Achievements → Projects → Skills.
+> - Hero: "Download Resume" uses the same filled accent style as "View Projects".
+> - Projects grid: `auto-rows-fr` + `h-full` cards, so every card is the same height; the metric and link sit at the bottom.
+> - Skills: two columns. Left: Programming Languages, AI Tools & Low-Code, Databases (the last card stretches so the columns end level). Right: Web Technologies and Frameworks & Tools in equal-height rows on `sm+`. On mobile, every card fits its content.
+> - Contact links show inline SVG icons (mail, LinkedIn, GitHub); no icon library added.
+> - Justified text: the About paragraph and Experience bullets use `sm:text-justify` (left-aligned on mobile). Cards and tags stay left-aligned.
+>
+> **Visual system ("refined minimal", chosen by the user)**
+> - New `components/Section.tsx`: exports `CONTAINER` (`mx-auto w-full max-w-5xl px-6 sm:px-10`) and a `<Section id eyebrow title tone>` wrapper (green eyebrow label + `h2`, `py-20 sm:py-24`, `scroll-mt-16`). Every homepage section, including Hero, uses `CONTAINER`, and no section below the hero caps its content narrower (both enforced by `components/__tests__/Section.test.tsx`).
+> - Section tones alternate: `plain` (`#FAFAFA`), `surface` (white with borders), `accent` (new `brand.accentSoft` `#ECFDF5`, used for "Let's talk"). This is a tint of the existing accent, so the single-accent constraint still holds.
+> - Hero: radial emerald glow, larger name. Experience: timeline with accent dots. Project and skill cards: rounded-xl, light shadow, hover lift on projects.
+> - The Task 1 smoke test and its ESLint warning are gone (the smoke test was replaced by `app/__tests__/page.test.tsx`).
+>
+> **Pending from the user:** whether to add a "Book a call" (Calendly) link and/or a "Copy email" button to Contact.
 
 **Files:**
 - Create: `components/ProjectCard.tsx`, `components/ProjectsGrid.tsx`, `components/Skills.tsx`, `components/Contact.tsx`
@@ -1049,6 +1075,8 @@ git commit -m "feat: assemble full homepage with projects grid, skills, and cont
 
 ## Task 6: Case Study Dynamic Route (`/projects/[slug]`)
 
+> **Note from Task 5:** to match the restyled homepage, wrap the case study page in `CONTAINER` from `components/Section.tsx` rather than the `px-6 sm:px-12 max-w-3xl mx-auto` used below. It can still cap the prose width inside the container for readability. Reuse the homepage's eyebrow/heading style and card look.
+
 **Files:**
 - Create: `app/projects/[slug]/page.tsx`
 - Create: `components/CaseStudyNav.tsx`
@@ -1228,6 +1256,8 @@ git commit -m "feat: add case study dynamic route with prev/next navigation"
 ---
 
 ## Task 7: Resume Asset + Site-Wide Header/Footer Nav
+
+> **Note from Task 5:** use `CONTAINER` from `components/Section.tsx` for the header and footer inner width so their edges line up with the homepage sections. Sections use `scroll-mt-16`, so a sticky header should be `h-16` (64px). The Contact section has `id="contact"` and the other sections have `about`, `experience`, `education`, `projects` and `skills`, if the nav needs anchors.
 
 **Files:**
 - Create: `public/resume.pdf` (copy of existing `Anmol-Verma-CV.pdf`)
