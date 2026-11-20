@@ -33,7 +33,8 @@ export default function Contact() {
   return (
     <Section id="contact" eyebrow="Get in touch" title="Let's talk" tone="accent">
       <p className="text-base sm:text-lg text-brand-muted">
-        Open to conversations about real-time systems, engineering leadership, and automation.
+        Open to conversations about real-time systems, engineering leadership, and automation — or just
+        engineering and tech in general.
       </p>
       <div className="mt-6 flex flex-wrap gap-4">
         {links.map((l) => (

@@ -820,7 +820,7 @@ git commit -m "feat: add Hero, About, ExperienceTimeline, EducationAchievements 
 > **Content changes**
 > - Hero tagline: removed "for transportation" and "finance" → "I build real-time, safety-critical systems — and lead the teams that ship them — alongside AI-driven automation."
 > - About: removed "on Zoho Creator" and the team-by-team fandom list; the sentence now ends "…and I'm a die-hard cricket and football fan." (Zoho Creator stays in the AI Accountant project and in Skills.)
-> - Contact: new line under the heading, "Open to conversations about real-time systems, engineering leadership, and automation." (added by Claude, not yet confirmed by the user).
+> - Contact: new line under the heading, "Open to conversations about real-time systems, engineering leadership, and automation — or just engineering and tech in general." (wording confirmed by the user).
 > - Education: no school education added (user decision: not relevant at this career stage). The degree and the achievements are now separate cards, and each achievement shows its `detail` line.
 >
 > **Layout and order**

@@ -24,3 +24,12 @@ describe("Contact icons", () => {
     }
   });
 });
+
+describe("Contact intro", () => {
+  it("invites general engineering and tech conversations too", () => {
+    render(<Contact />);
+    expect(screen.getByText(/real-time systems, engineering leadership, and automation/)).toHaveTextContent(
+      /engineering and tech in general/
+    );
+  });
+});
