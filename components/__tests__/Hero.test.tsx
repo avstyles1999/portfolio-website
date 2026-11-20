@@ -25,3 +25,20 @@ describe("Hero copy and CTAs", () => {
     expect(resume.className).toBe(projects.className);
   });
 });
+
+describe("Hero download + mobile spacing", () => {
+  it("Download Resume downloads the file instead of opening it", () => {
+    render(<Hero />);
+    expect(screen.getByRole("link", { name: /download resume/i })).toHaveAttribute(
+      "download",
+      "Anmol-Verma-Resume.pdf",
+    );
+  });
+
+  it("only forces a tall min-height from the sm breakpoint up (no empty space on mobile)", () => {
+    const { container } = render(<Hero />);
+    const inner = container.querySelector("section > div")!;
+    const classes = inner.className.split(/\s+/);
+    expect(classes.some((c) => c.startsWith("min-h-"))).toBe(false);
+  });
+});
