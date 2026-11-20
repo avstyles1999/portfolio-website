@@ -388,6 +388,8 @@ git commit -m "feat: add experience, education, and skills content data"
 
 ## Task 3: Project Case Study Content Data ✅ DONE (commit `e3503d3`)
 
+> **Status:** Complete. **Later content edits (user feedback during Task 6):** the AI Accountant, Diagnostic Watchdog and TCA case studies were reworded — see Task 6's status block. The code blocks below show the original plan text; `content/projects.ts` is the source of truth.
+
 **Files:**
 - Modify: `content/types.ts` (add `Project` type)
 - Create: `content/projects.ts`
@@ -1073,9 +1075,21 @@ git commit -m "feat: assemble full homepage with projects grid, skills, and cont
 
 ---
 
-## Task 6: Case Study Dynamic Route (`/projects/[slug]`)
+## Task 6: Case Study Dynamic Route (`/projects/[slug]`) ✅ DONE (commits `bcf279a` → `dac3164`)
 
-> **Note from Task 5:** to match the restyled homepage, wrap the case study page in `CONTAINER` from `components/Section.tsx` rather than the `px-6 sm:px-12 max-w-3xl mx-auto` used below. It can still cap the prose width inside the container for readability. Reuse the homepage's eyebrow/heading style and card look.
+> **Status:** Complete. Steps 1–6 executed (`bcf279a`), with two deviations: the nav test's `/realtime routing/i` could never match the title "Real-time Routing & Vehicle Control Engine", so it now uses `/real-time routing/i`; and, following the Task 5 note, the page uses the homepage's look (`CONTAINER`, a header band with the hero gradient and a "Case study" eyebrow, tags styled like the project cards, Impact in an `accentSoft` card, Previous/Next as cards plus "← Back to all projects"). The user then reviewed the pages and asked for the changes below (`ee7c0e5`, `dac3164`). The code blocks below show the original plan text; `app/projects/[slug]/page.tsx`, `components/CaseStudyNav.tsx` and `content/` are the source of truth.
+>
+> **Layout**
+> - Tech tags are larger (`text-sm`, `px-3 py-1.5`) on case study pages. The homepage project cards are unchanged.
+> - Less space between the tags and Overview (about 208px → 96px on desktop).
+> - No narrower width cap inside `CONTAINER`, so the left and right margins match (this supersedes the Task 5 note's "can still cap the prose width"). A test in `app/projects/__tests__/slug.test.tsx` enforces it.
+>
+> **Content changes**
+> - **AI Accountant:** "implemented parts of the purchase invoice processing pipeline" is replaced with what the user built. Once OCR has extracted the invoice data, a pipeline and screens run a two-level review: the first reviewer checks the extraction is correct, the second checks financial correctness. Human approval is mandatory because the data is financial. On approval, the platform generates a Tally XML voucher, which the accountant exports to Tally. Overview, Approach and a new Impact point say this, and the Team Lead experience bullet on the homepage now ends "…and the two-level review and Tally export stages of purchase invoice processing."
+> - **Tally XML is not a skill** (user decision): it is not a tech tag anywhere. It appears only in prose describing the output voucher.
+> - **Diagnostic Watchdog:** the React dashboard shows the last diagnostic check result for every system, lets operators download the full check history, and lets them run an on-demand diagnostic check to confirm everything is working. Overview, Approach and the dashboard Impact point updated.
+> - **TCA:** the React dashboard lets analysts combine filtering and sorting across multiple trade parameters and export the result to Excel. Approach updated and a new Impact point added.
+> - No new metrics were added.
 
 **Files:**
 - Create: `app/projects/[slug]/page.tsx`
