@@ -9,3 +9,10 @@ describe("About", () => {
     expect(screen.getByText(/cricket|football/i)).toBeInTheDocument();
   });
 });
+
+describe("About trimmed copy", () => {
+  it("omits Zoho Creator and the team-by-team fandom list", () => {
+    const { container } = render(<About />);
+    expect(container.textContent).not.toMatch(/Zoho Creator|KKR|Barcelona|Messi/);
+  });
+});

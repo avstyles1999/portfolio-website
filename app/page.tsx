@@ -11,11 +11,11 @@ export default function Page() {
     <main>
       <Hero />
       <About />
+      <Contact />
       <ExperienceTimeline />
       <EducationAchievements />
       <ProjectsGrid />
       <Skills />
-      <Contact />
     </main>
   );
 }

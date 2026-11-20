@@ -11,4 +11,10 @@ describe("Homepage", () => {
     expect(screen.getAllByRole("link", { name: /read case study/i })).toHaveLength(6);
     expect(screen.getByText("Programming Languages")).toBeInTheDocument();
   });
+
+  it("places Let's talk right after About, before Experience", () => {
+    const { container } = render(<Page />);
+    const headings = Array.from(container.querySelectorAll("h2")).map((h) => h.textContent);
+    expect(headings.slice(0, 3)).toEqual(["About", "Let's talk", "Experience"]);
+  });
 });

@@ -3,7 +3,7 @@ import type { Project } from "@/content/types";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="border border-brand-border rounded-lg p-6 flex flex-col">
+    <div className="h-full border border-brand-border rounded-lg p-6 flex flex-col">
       <h3 className="font-semibold text-lg">{project.title}</h3>
       <p className="mt-2 text-sm text-brand-muted flex-1">{project.oneLiner}</p>
       <div className="mt-4 flex flex-wrap gap-2">

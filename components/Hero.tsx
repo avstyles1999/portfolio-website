@@ -8,8 +8,8 @@ export default function Hero() {
         Team Lead, Software Development — Real-time &amp; Safety-Critical Systems
       </p>
       <p className="mt-6 max-w-2xl text-base sm:text-lg">
-        I build real-time, safety-critical systems for transportation — and lead the teams that ship them —
-        alongside AI-driven finance automation.
+        I build real-time, safety-critical systems — and lead the teams that ship them — alongside AI-driven
+        automation.
       </p>
       <div className="mt-8 flex flex-wrap gap-4">
         <Link
@@ -20,7 +20,7 @@ export default function Hero() {
         </Link>
         <Link
           href="/resume.pdf"
-          className="rounded-md border border-brand-border px-5 py-3 font-medium hover:border-brand-accent transition-colors"
+          className="rounded-md bg-brand-accent px-5 py-3 text-white font-medium hover:bg-brand-accentDark transition-colors"
         >
           Download Resume
         </Link>
