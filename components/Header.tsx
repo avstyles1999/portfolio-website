@@ -8,10 +8,13 @@ const SECTIONS = [
   { label: "Contact", href: "/#contact", mobile: false },
 ];
 
+// Hover styles are gated on (hover: hover): on touch screens a tap leaves :hover "stuck" until the next tap.
+// Class names are written out in full so Tailwind's scanner can find them.
 const NAV_LINK =
-  "relative py-1 text-brand-muted transition-colors hover:text-brand-text " +
+  "relative py-1 text-brand-muted transition-colors [@media(hover:hover)]:hover:text-brand-text focus-visible:text-brand-text " +
   "after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 " +
-  "after:rounded-full after:bg-brand-accent after:transition-transform after:duration-300 hover:after:scale-x-100";
+  "after:rounded-full after:bg-brand-accent after:transition-transform after:duration-300 " +
+  "[@media(hover:hover)]:hover:after:scale-x-100 focus-visible:after:scale-x-100";
 
 export default function Header() {
   return (

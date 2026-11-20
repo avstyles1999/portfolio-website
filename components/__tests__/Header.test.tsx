@@ -25,4 +25,12 @@ describe("Header", () => {
       expect(screen.getByRole("link", { name })).toHaveAttribute("href", href);
     }
   });
+
+  it("section links only apply hover styles on devices that really hover (no sticky underline after a tap)", () => {
+    render(<Header />);
+    for (const name of ["About", "Experience", "Projects", "Contact"]) {
+      const tokens = screen.getByRole("link", { name }).className.split(/\s+/);
+      expect(tokens.filter((t) => t.startsWith("hover:"))).toEqual([]);
+    }
+  });
 });
