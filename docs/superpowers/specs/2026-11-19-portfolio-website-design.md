@@ -164,6 +164,19 @@ These supersede the matching text above. The implementation plan's Task 5 status
 - **Text alignment:** the About paragraph and Experience bullets are justified on tablet and wider screens, left-aligned on mobile.
 - **Content width:** 1024px (`max-w-5xl`) is the intended max content width for every section; this replaces "~1100–1200px" above. The user chose it on 2026-11-20 because wider lines would push the About and Experience text past a comfortable line length (~120 characters per line at 1152px).
 
+## Amendments (2026-11-20, user feedback during case study build)
+
+These supersede the matching text above. The implementation plan's Task 6 status block has the full detail.
+
+- **Content width on case study pages:** the text runs the full 1024px container, so the left and right margins are equal. This replaces "case study body text kept to a comfortable ~65-75 character line length" (user decision).
+- **Tech stack:** shown once, as tags in the page header (slightly larger than on the homepage cards). There is no separate Tech Stack section at the bottom, which replaces item 6 of the per-project template.
+- **Footer nav:** Previous and Next are cards showing the neighbouring project titles, followed by "← Back to all projects".
+- **AI Accountant content (supplied by the user):** after OCR extracts a purchase invoice, Anmol's pipeline and screens run a two-level review. The first level checks the extraction is correct and the second checks financial correctness. Human approval is mandatory because the data is financial. On approval, a Tally XML voucher is generated, which the accountant exports to Tally. This replaces "implemented parts of the purchase invoice processing pipeline", here and in the Experience section.
+- **Tally XML is not a skill:** it is never shown as a tech tag. It appears only in prose describing the voucher.
+- **Diagnostic Watchdog dashboard (supplied by the user):** shows the last diagnostic check result for every system, lets operators download the full history, and lets them run an on-demand check.
+- **TCA dashboard (supplied by the user):** combined filtering and sorting across multiple trade parameters, with export to Excel.
+- These descriptions come from the user and go beyond the resume, but they add no new metrics, so the confidentiality rule's "metrics already on the resume" still holds.
+
 ## Amendments (2026-11-20, user feedback during header/footer build)
 
 These supersede the matching text above. The implementation plan's Task 7 status block has the full detail.
