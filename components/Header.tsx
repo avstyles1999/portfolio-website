@@ -27,7 +27,7 @@ export default function Header() {
         <Link href="/" className="group flex items-center gap-2.5">
           <span
             aria-hidden="true"
-            className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-brand-accent to-teal-500 text-xs font-bold tracking-wider text-white shadow-sm transition-transform group-hover:scale-105"
+            className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-brand-accent to-teal-500 text-xs font-bold tracking-wider text-white shadow-sm transition-transform [@media(hover:hover)]:group-hover:scale-105"
           >
             AV
           </span>

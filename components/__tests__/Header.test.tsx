@@ -33,4 +33,11 @@ describe("Header", () => {
       expect(tokens.filter((t) => t.startsWith("hover:"))).toEqual([]);
     }
   });
+
+  it("AV badge only grows on hover on devices that really hover (no stuck scale after a tap)", () => {
+    render(<Header />);
+    const tokens = screen.getByText("AV").className.split(/\s+/);
+    expect(tokens.filter((t) => t.startsWith("group-hover:"))).toEqual([]);
+    expect(tokens).toContain("[@media(hover:hover)]:group-hover:scale-105");
+  });
 });
