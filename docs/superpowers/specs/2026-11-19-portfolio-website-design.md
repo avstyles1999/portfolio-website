@@ -114,7 +114,7 @@ Visual engagement on these text-only pages comes from typography and layout (met
 
 **Spacing & feel**
 - Generous vertical rhythm between homepage sections (large padding on desktop, scaled down on mobile)
-- Max content width ~1100-1200px, centered; case study body text kept to a comfortable ~65-75 character line length
+- Max content width 1024px, centered (amended 2026-11-20; was ~1100-1200px); case study body text kept to a comfortable ~65-75 character line length
 - Flat design — subtle borders/dividers rather than drop-shadow cards
 - Minimal animation: scroll fade-ins acceptable, no parallax/particle effects
 
@@ -162,4 +162,4 @@ These supersede the matching text above. The implementation plan's Task 5 status
 - **Skills:** two columns. Left: Programming Languages, AI Tools & Low-Code, Databases. Right: Web Technologies, Frameworks & Tools (equal heights on tablet and wider). On mobile, cards fit their content.
 - **Visual style ("refined minimal", chosen by the user):** green eyebrow labels above section headings, alternating section backgrounds, timeline dots, and **subtle shadows plus a hover lift on project cards**. This intentionally relaxes "Flat design — subtle borders rather than drop-shadow cards".
 - **Text alignment:** the About paragraph and Experience bullets are justified on tablet and wider screens, left-aligned on mobile.
-- **Content width:** all homepage sections share one container, currently `max-w-5xl` (1024px). That is slightly under the ~1100–1200px stated above; `max-w-6xl` (1152px) would match it if wanted.
+- **Content width:** 1024px (`max-w-5xl`) is the intended max content width for every section; this replaces "~1100–1200px" above. The user chose it on 2026-11-20 because wider lines would push the About and Experience text past a comfortable line length (~120 characters per line at 1152px).

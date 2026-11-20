@@ -830,7 +830,7 @@ git commit -m "feat: add Hero, About, ExperienceTimeline, EducationAchievements 
 > - Justified text: the About paragraph and Experience bullets use `sm:text-justify` (left-aligned on mobile). Cards and tags stay left-aligned.
 >
 > **Visual system ("refined minimal", chosen by the user)**
-> - New `components/Section.tsx`: exports `CONTAINER` (`mx-auto w-full max-w-5xl px-6 sm:px-10`) and a `<Section id eyebrow title tone>` wrapper (green eyebrow label + `h2`, `py-20 sm:py-24`, `scroll-mt-16`). Every homepage section, including Hero, uses `CONTAINER`, and no section below the hero caps its content narrower (both enforced by `components/__tests__/Section.test.tsx`).
+> - New `components/Section.tsx`: exports `CONTAINER` (`mx-auto w-full max-w-5xl px-6 sm:px-10`) — 1024px is the intended site-wide max width (user decision, supersedes the spec's ~1100–1200px) and a `<Section id eyebrow title tone>` wrapper (green eyebrow label + `h2`, `py-20 sm:py-24`, `scroll-mt-16`). Every homepage section, including Hero, uses `CONTAINER`, and no section below the hero caps its content narrower (both enforced by `components/__tests__/Section.test.tsx`).
 > - Section tones alternate: `plain` (`#FAFAFA`), `surface` (white with borders), `accent` (new `brand.accentSoft` `#ECFDF5`, used for "Let's talk"). This is a tint of the existing accent, so the single-accent constraint still holds.
 > - Hero: radial emerald glow, larger name. Experience: timeline with accent dots. Project and skill cards: rounded-xl, light shadow, hover lift on projects.
 > - The Task 1 smoke test and its ESLint warning are gone (the smoke test was replaced by `app/__tests__/page.test.tsx`).
