@@ -3,7 +3,7 @@ import Section from "./Section";
 export default function About() {
   return (
     <Section id="about" eyebrow="Who I am" title="About" tone="surface">
-      <p className="max-w-3xl text-base sm:text-lg leading-relaxed text-brand-text">
+      <p className="text-base sm:text-lg sm:text-justify leading-relaxed text-brand-text">
         I&apos;m a software engineer with 5+ years of experience delivering real-time, safety-critical systems
         across transportation and fintech — currently leading backend development for a Personalized Rapid
         Transit platform and building AI-driven finance automation. I care about systems that have to be right

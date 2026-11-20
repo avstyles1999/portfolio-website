@@ -24,3 +24,13 @@ describe("Section", () => {
     }
   });
 });
+
+describe("Full-width content", () => {
+  it("no homepage section below the hero caps its content narrower than the container", () => {
+    const { container } = render(<Page />);
+    const sections = Array.from(container.querySelectorAll("main > section")).slice(1);
+    for (const s of sections) {
+      expect(s.querySelector("[class*='max-w-2xl'],[class*='max-w-3xl']")).toBeNull();
+    }
+  });
+});

@@ -4,7 +4,7 @@ import Section from "./Section";
 export default function ExperienceTimeline() {
   return (
     <Section id="experience" eyebrow="Where I've worked" title="Experience">
-      <ol className="relative max-w-3xl space-y-12 border-l-2 border-brand-border pl-8">
+      <ol className="relative space-y-12 border-l-2 border-brand-border pl-8">
         {experience.map((entry) => (
           <li key={`${entry.company}-${entry.title}`} className="relative">
             <span
@@ -19,7 +19,7 @@ export default function ExperienceTimeline() {
               {entry.highlights.map((h) => (
                 <li key={h} className="flex gap-3">
                   <span aria-hidden className="mt-2.5 h-1.5 w-1.5 flex-none rounded-full bg-brand-muted" />
-                  <span>{h}</span>
+                  <span className="sm:text-justify">{h}</span>
                 </li>
               ))}
             </ul>

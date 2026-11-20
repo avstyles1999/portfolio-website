@@ -13,3 +13,14 @@ describe("Contact", () => {
     expect(screen.getByRole("link", { name: /github/i })).toHaveAttribute("href", "https://github.com/avstyles1999");
   });
 });
+
+describe("Contact icons", () => {
+  it("each contact link shows a decorative icon", () => {
+    render(<Contact />);
+    for (const name of [/email/i, /linkedin/i, /github/i]) {
+      const svg = screen.getByRole("link", { name }).querySelector("svg");
+      expect(svg).not.toBeNull();
+      expect(svg).toHaveAttribute("aria-hidden", "true");
+    }
+  });
+});

@@ -16,3 +16,12 @@ describe("About trimmed copy", () => {
     expect(container.textContent).not.toMatch(/Zoho Creator|KKR|Barcelona|Messi/);
   });
 });
+
+describe("About alignment", () => {
+  it("justifies the paragraph on sm+ only", () => {
+    const { container } = render(<About />);
+    const p = container.querySelector("p:not([class*='uppercase'])")!;
+    expect(p.className).toContain("sm:text-justify");
+    expect(p.className).not.toMatch(/(^| )text-justify/);
+  });
+});
