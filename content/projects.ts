@@ -43,7 +43,7 @@ export const projects: Project[] = [
     slug: "ai-accountant-platform",
     title: "AI Accountant Finance Platform",
     oneLiner: "A Zoho Creator platform that automates core accounting work, from invoice processing to bank reconciliation and monthly statements.",
-    techStack: ["Zoho Creator", "Deluge", "Zoho WorkDrive API", "Zoho Creator REST API", "Tally XML"],
+    techStack: ["Zoho Creator", "Deluge", "Zoho WorkDrive API", "Zoho Creator REST API"],
     standoutMetric: "Led the platform end to end; 90+ Deluge functions in the reconciliation pipeline",
     order: 3,
     overview:
