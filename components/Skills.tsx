@@ -20,12 +20,16 @@ function SkillCard({ group, grow }: { group: SkillGroup; grow: boolean }) {
   );
 }
 
-function Column({ name, groups }: { name: string; groups: SkillGroup[] }) {
-  // The last card stretches so both columns end at the same height.
+/**
+ * Left column: the last card stretches so both columns end level.
+ * Right column (sm+): equal-height rows, so Web Technologies and Frameworks & Tools match.
+ * On mobile both are plain stacks and every card fits its content.
+ */
+function Column({ name, groups, equalRows }: { name: string; groups: SkillGroup[]; equalRows?: boolean }) {
   return (
-    <div data-col={name} className="flex flex-col gap-6">
+    <div data-col={name} className={`flex flex-col gap-6 ${equalRows ? "sm:grid sm:auto-rows-fr" : ""}`}>
       {groups.map((g, i) => (
-        <SkillCard key={g.category} group={g} grow={i === groups.length - 1} />
+        <SkillCard key={g.category} group={g} grow={!equalRows && i === groups.length - 1} />
       ))}
     </div>
   );
@@ -38,7 +42,7 @@ export default function Skills() {
     <Section id="skills" eyebrow="Toolkit" title="Skills" tone="surface">
       <div className="grid gap-6 sm:grid-cols-2">
         <Column name="left" groups={left} />
-        <Column name="right" groups={right} />
+        <Column name="right" groups={right} equalRows />
       </div>
     </Section>
   );

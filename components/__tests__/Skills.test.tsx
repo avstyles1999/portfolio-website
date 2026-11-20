@@ -19,3 +19,16 @@ describe("Skills layout", () => {
     expect(col("right")).toEqual(["Web Technologies", "Frameworks & Tools"]);
   });
 });
+
+describe("Skills right column heights", () => {
+  it("gives Web Technologies and Frameworks & Tools equal rows on sm+, natural heights on mobile", () => {
+    const { container } = render(<Skills />);
+    const right = container.querySelector('[data-col="right"]')!;
+    expect(right.className).toMatch(/(^| )flex flex-col/);
+    expect(right.className).toContain("sm:grid");
+    expect(right.className).toContain("sm:auto-rows-fr");
+    for (const card of Array.from(right.children)) {
+      expect(card.className).not.toMatch(/(^| )(flex-1|h-\S+)( |$)/);
+    }
+  });
+});
