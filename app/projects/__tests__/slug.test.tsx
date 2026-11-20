@@ -36,4 +36,15 @@ describe("Case study page", () => {
     const { container } = render(ui);
     expect(container.querySelector("[class*='max-w-2xl'],[class*='max-w-3xl'],[class*='max-w-4xl']")).toBeNull();
   });
+
+  it("keeps header muted text readable on the gradient (darker than brand-muted, WCAG AA)", async () => {
+    const ui = await CaseStudyPage({ params: Promise.resolve({ slug: "prt-network-simulator" }) });
+    render(ui);
+    const back = screen.getByRole("link", { name: /← Projects/ });
+    const oneLiner = screen.getByText(/browser-based simulator for designing/i);
+    for (const el of [back, oneLiner]) {
+      expect(el.className).not.toMatch(/text-brand-muted/);
+      expect(el.className).toMatch(/text-gray-600/);
+    }
+  });
 });

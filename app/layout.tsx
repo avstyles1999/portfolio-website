@@ -6,10 +6,14 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
+const title = "Anmol Verma — Software Engineering Lead";
+const description =
+  "Portfolio of Anmol Verma, Team Lead Software Development — real-time, safety-critical systems and AI-driven automation.";
+
 export const metadata: Metadata = {
-  title: "Anmol Verma — Software Engineering Lead",
-  description:
-    "Portfolio of Anmol Verma, Team Lead Software Development — real-time, safety-critical systems and AI-driven automation.",
+  title,
+  description,
+  openGraph: { title, description, type: "website" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

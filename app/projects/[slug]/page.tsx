@@ -40,12 +40,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
     <main>
       <header className="border-b border-brand-border bg-[radial-gradient(ellipse_at_top_left,_#D1FAE5_0%,_transparent_55%)]">
         <div className={`${CONTAINER} pt-16 pb-10 sm:pt-20 sm:pb-12`}>
-          <Link href="/#projects" className="text-sm font-medium text-brand-muted hover:text-brand-accent">
+          <Link href="/#projects" className="text-sm font-medium text-gray-600 hover:text-brand-accent">
             ← Projects
           </Link>
           <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">Case study</p>
           <h1 className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight">{project.title}</h1>
-          <p className="mt-4 text-lg sm:text-xl text-brand-muted">{project.oneLiner}</p>
+          <p className="mt-4 text-lg sm:text-xl text-gray-600">{project.oneLiner}</p>
           <div className="mt-6 flex flex-wrap gap-2">
             {project.techStack.map((t) => (
               <span key={t} className="rounded-full bg-gray-100 px-3 py-1.5 text-sm text-gray-700">

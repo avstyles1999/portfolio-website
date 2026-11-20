@@ -28,4 +28,10 @@ describe("projects data", () => {
     const nos = projects.find((p) => p.slug === "network-operating-system")!;
     expect(nos.techStack).toEqual(expect.arrayContaining(["Node.js", "Express", "MongoDB"]));
   });
+
+  it("routing engine standout metric reads as a latency budget, not 'Sub-200-300ms'", () => {
+    const routing = projects.find((p) => p.slug === "realtime-routing-engine")!;
+    expect(routing.standoutMetric).not.toMatch(/Sub-/);
+    expect(routing.standoutMetric).toMatch(/within a 200-300ms latency budget/);
+  });
 });

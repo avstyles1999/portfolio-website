@@ -25,7 +25,7 @@ export const projects: Project[] = [
     title: "Real-time Routing & Vehicle Control Engine",
     oneLiner: "A constraint-aware routing engine and protocol implementation powering real-time PRT vehicle control.",
     techStack: ["Python", "CBTC", "APM"],
-    standoutMetric: "Sub-200-300ms control latency across 100+ concurrent vehicles",
+    standoutMetric: "Real-time control within a 200-300ms latency budget across 100+ concurrent vehicles",
     order: 2,
     overview:
       "An end-to-end Python routing engine handling path computation for 100+ concurrent vehicles in a PRT network, alongside core CBTC (Communications-Based Train Control) and APM (Automated People Mover) protocol features for real-time vehicle control.",
