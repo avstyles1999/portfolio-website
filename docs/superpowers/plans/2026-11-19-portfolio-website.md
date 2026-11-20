@@ -597,7 +597,7 @@ git commit -m "feat: add 6 project case study content entries"
 
 ---
 
-## Task 4: Homepage Hero, About, Experience, Education Components
+## Task 4: Homepage Hero, About, Experience, Education Components ✅ DONE (commit `0574173`)
 
 **Files:**
 - Create: `components/Hero.tsx`, `components/About.tsx`, `components/ExperienceTimeline.tsx`, `components/EducationAchievements.tsx`
@@ -607,7 +607,7 @@ git commit -m "feat: add 6 project case study content entries"
 - Consumes: `experience` from `content/experience.ts`, `education` from `content/education.ts` (Task 2).
 - Produces: `<Hero />`, `<About />`, `<ExperienceTimeline />`, `<EducationAchievements />` — each a zero-prop component, consumed by `app/page.tsx` in Task 5.
 
-- [ ] **Step 1: Write failing tests**
+- [x] **Step 1: Write failing tests**
 
 Create `components/__tests__/Hero.test.tsx`:
 
@@ -678,14 +678,14 @@ describe("EducationAchievements", () => {
 });
 ```
 
-- [ ] **Step 2: Run tests to verify they fail**
+- [x] **Step 2: Run tests to verify they fail**
 
 ```bash
 npm run test
 ```
 Expected: FAIL — components don't exist yet.
 
-- [ ] **Step 3: Implement `components/Hero.tsx`**
+- [x] **Step 3: Implement `components/Hero.tsx`**
 
 ```tsx
 import Link from "next/link";
@@ -720,7 +720,7 @@ export default function Hero() {
 }
 ```
 
-- [ ] **Step 4: Implement `components/About.tsx`**
+- [x] **Step 4: Implement `components/About.tsx`**
 
 ```tsx
 export default function About() {
@@ -741,7 +741,7 @@ export default function About() {
 }
 ```
 
-- [ ] **Step 5: Implement `components/ExperienceTimeline.tsx`**
+- [x] **Step 5: Implement `components/ExperienceTimeline.tsx`**
 
 ```tsx
 import { experience } from "@/content/experience";
@@ -770,7 +770,7 @@ export default function ExperienceTimeline() {
 }
 ```
 
-- [ ] **Step 6: Implement `components/EducationAchievements.tsx`**
+- [x] **Step 6: Implement `components/EducationAchievements.tsx`**
 
 ```tsx
 import { education } from "@/content/education";
@@ -793,14 +793,14 @@ export default function EducationAchievements() {
 }
 ```
 
-- [ ] **Step 7: Run tests to verify they pass**
+- [x] **Step 7: Run tests to verify they pass**
 
 ```bash
 npm run test
 ```
 Expected: PASS for all 4 component test files.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add components/
