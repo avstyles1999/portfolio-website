@@ -149,3 +149,17 @@ Mobile-first requirement across the entire site, not a bolt-on:
 - Dedicated hobbies/interests section
 - Screenshots, diagrams, or code snippets in case studies
 - Final hosting/domain decision (deferred until after build)
+
+## Amendments (2026-11-20, user feedback during homepage build)
+
+These supersede the matching text above. The implementation plan's Task 5 status block has the full detail.
+
+- **Homepage order:** Hero → About → Contact ("Let's talk") → Experience → Education & Achievements → Projects → Skills. Contact moved up from the end.
+- **Hero tagline:** "I build real-time, safety-critical systems — and lead the teams that ship them — alongside AI-driven automation." (no "transportation" / "finance").
+- **About:** no "Zoho Creator" mention; the closing sentence is "…and I'm a die-hard cricket and football fan." (no team list).
+- **Contact:** left-aligned section on a pale emerald tint (`#ECFDF5`) with a one-line intro and outlined icon+text buttons (inline SVG icons). It is no longer a "simple centered" section. A "Book a call" link and/or "Copy email" button may be added later (user undecided).
+- **Education & Achievements:** two side-by-side cards: the degree, and the achievements with their short details. School education is deliberately not listed.
+- **Skills:** two columns. Left: Programming Languages, AI Tools & Low-Code, Databases. Right: Web Technologies, Frameworks & Tools (equal heights on tablet and wider). On mobile, cards fit their content.
+- **Visual style ("refined minimal", chosen by the user):** green eyebrow labels above section headings, alternating section backgrounds, timeline dots, and **subtle shadows plus a hover lift on project cards**. This intentionally relaxes "Flat design — subtle borders rather than drop-shadow cards".
+- **Text alignment:** the About paragraph and Experience bullets are justified on tablet and wider screens, left-aligned on mobile.
+- **Content width:** all homepage sections share one container, currently `max-w-5xl` (1024px). That is slightly under the ~1100–1200px stated above; `max-w-6xl` (1152px) would match it if wanted.
