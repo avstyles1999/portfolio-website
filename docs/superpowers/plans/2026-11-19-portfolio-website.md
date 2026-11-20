@@ -601,7 +601,7 @@ git commit -m "feat: add 6 project case study content entries"
 
 ## Task 4: Homepage Hero, About, Experience, Education Components ✅ DONE (commit `0574173`)
 
-> **Status:** Complete. Executed as written except `{entry.company}` is wrapped in its own `<span>` so the test's exact text match works. **Later edits (user feedback during Task 5):** all four components were restyled and reworded — see Task 5's status block. The code blocks below show the original plan text; `components/` is the source of truth.
+> **Status:** Complete. Executed as written except `{entry.company}` is wrapped in its own `<span>` so the test's exact text match works. **Later edits (user feedback during Task 5):** all four components were restyled and reworded — see Task 5's status block. **Task 7 also changed the hero:** Download Resume downloads the file, and the tall minimum height applies only from `sm` up — see Task 7's status block. The code blocks below show the original plan text; `components/` is the source of truth.
 
 **Files:**
 - Create: `components/Hero.tsx`, `components/About.tsx`, `components/ExperienceTimeline.tsx`, `components/EducationAchievements.tsx`
@@ -1269,9 +1269,30 @@ git commit -m "feat: add case study dynamic route with prev/next navigation"
 
 ---
 
-## Task 7: Resume Asset + Site-Wide Header/Footer Nav
+## Task 7: Resume Asset + Site-Wide Header/Footer Nav ✅ DONE (commits `db3d6b9` → `d415a8b`)
 
 > **Note from Task 5:** use `CONTAINER` from `components/Section.tsx` for the header and footer inner width so their edges line up with the homepage sections. Sections use `scroll-mt-16`, so a sticky header should be `h-16` (64px). The Contact section has `id="contact"` and the other sections have `about`, `experience`, `education`, `projects` and `skills`, if the nav needs anchors.
+
+
+> **Status:** Complete. Steps 1–8 executed (`db3d6b9`), with these deviations: following the Task 5 note, the header is sticky, `h-16`, and uses `CONTAINER` for its inner width (the footer too); the commit also includes `components/__tests__/Header.test.tsx`, which the plan's `git add` left out. The full `npm run build` was skipped at the user's request (tests, `tsc --noEmit` and lint were clean), so Task 8 is the first build since Task 6. The user then reviewed the site and asked for the changes below (`b74f767`, `42c6520`, `aaf6568`, `a7054ee`, `d415a8b`). Each one has a test; 41/41 tests pass. The code blocks below show the original plan text; `components/Header.tsx`, `components/Footer.tsx`, `components/Hero.tsx` and `app/layout.tsx` are the source of truth.
+>
+> **Resume downloads instead of opening**
+> - The header's Resume button and the hero's Download Resume button are plain `<a href="/resume.pdf" download="Anmol-Verma-Resume.pdf">` links, so the browser downloads the file rather than opening it in a tab.
+> - `public/resume.pdf` is the current `Anmol-Verma-CV.pdf`, unchanged. Its known content mismatches with the site are accepted for now; the user will replace the PDF later.
+>
+> **Less empty space below the hero on mobile**
+> - The hero's `min-h-[85vh]` now applies only from `sm` up (`sm:min-h-[85vh]`). On mobile the hero is as tall as its content (`pt-16 pb-14`), which removes the large gap above About. Desktop is unchanged.
+>
+> **Header redesign** (the plan's two-link header looked too bland)
+> - A thin green-to-teal gradient stripe along the top edge, a frosted see-through background (`bg-white/75 backdrop-blur-md`) and a soft green shadow.
+> - An "AV" monogram badge (green gradient, rounded) next to the name.
+> - Section links About, Experience, Projects and Contact (`/#about` etc., so they work from case-study pages too), with a green underline that slides in on hover or keyboard focus. Below `md` only Projects shows, so the header fits on one line on phones.
+> - Resume is a green rounded button with a download icon.
+> - **Kept the name, not "Home",** as the home link (user agreed): on a personal site the name is the brand, and visitors expect it to go home.
+>
+> **No "stuck" hover after a tap on touch screens**
+> - On phones, a tap leaves `:hover` active until the next tap, so the nav underline stayed visible after tapping Projects. Every hover effect in the header (nav underline and text colour, AV badge scale, name colour, Resume button colour and shadow) now uses the `[@media(hover:hover)]:` variant, so it only applies on devices that can really hover. Class names are written out in full so Tailwind's scanner finds them.
+> - Not yet applied outside the header: the hero buttons and the cards further down the page still use plain `hover:` (user chose header-only scope).
 
 **Files:**
 - Create: `public/resume.pdf` (copy of existing `Anmol-Verma-CV.pdf`)
@@ -1282,14 +1303,14 @@ git commit -m "feat: add case study dynamic route with prev/next navigation"
 **Interfaces:**
 - Produces: `<Header />`, `<Footer />` wrapping every page via `app/layout.tsx`.
 
-- [ ] **Step 1: Copy resume into `public/`**
+- [x] **Step 1: Copy resume into `public/`**
 
 ```bash
 mkdir -p public
 cp "Anmol-Verma-CV.pdf" public/resume.pdf
 ```
 
-- [ ] **Step 2: Write failing test for Header**
+- [x] **Step 2: Write failing test for Header**
 
 Create `components/__tests__/Header.test.tsx`:
 
@@ -1307,14 +1328,14 @@ describe("Header", () => {
 });
 ```
 
-- [ ] **Step 3: Run test to verify it fails**
+- [x] **Step 3: Run test to verify it fails**
 
 ```bash
 npm run test
 ```
 Expected: FAIL — `Header` doesn't exist.
 
-- [ ] **Step 4: Implement `components/Header.tsx`**
+- [x] **Step 4: Implement `components/Header.tsx`**
 
 ```tsx
 import Link from "next/link";
@@ -1340,7 +1361,7 @@ export default function Header() {
 
 (Nav is a 2-item flex row that wraps naturally on narrow screens — no hamburger menu needed given the minimal 2-link nav.)
 
-- [ ] **Step 5: Implement `components/Footer.tsx`**
+- [x] **Step 5: Implement `components/Footer.tsx`**
 
 ```tsx
 export default function Footer() {
@@ -1352,7 +1373,7 @@ export default function Footer() {
 }
 ```
 
-- [ ] **Step 6: Wire Header/Footer into `app/layout.tsx`**
+- [x] **Step 6: Wire Header/Footer into `app/layout.tsx`**
 
 ```tsx
 import type { Metadata } from "next";
@@ -1382,14 +1403,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 ```
 
-- [ ] **Step 7: Run tests to verify they pass**
+- [x] **Step 7: Run tests to verify they pass**
 
 ```bash
 npm run test
 ```
 Expected: PASS.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add public/resume.pdf components/Header.tsx components/Footer.tsx app/layout.tsx
@@ -1399,6 +1420,8 @@ git commit -m "feat: add resume asset and site-wide header/footer navigation"
 ---
 
 ## Task 8: Final Build Verification
+
+> **Note from Task 7:** the full build was last run in Task 6, so Step 3 is the first build check of Task 7's changes. In Step 4 also check that the header's Resume button and the hero's Download Resume button download the PDF, that the header fits on one line at 375px, and — on a real phone — that no header link stays highlighted after a tap.
 
 **Files:** none created; verification only.
 

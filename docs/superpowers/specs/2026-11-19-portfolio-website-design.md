@@ -163,3 +163,13 @@ These supersede the matching text above. The implementation plan's Task 5 status
 - **Visual style ("refined minimal", chosen by the user):** green eyebrow labels above section headings, alternating section backgrounds, timeline dots, and **subtle shadows plus a hover lift on project cards**. This intentionally relaxes "Flat design — subtle borders rather than drop-shadow cards".
 - **Text alignment:** the About paragraph and Experience bullets are justified on tablet and wider screens, left-aligned on mobile.
 - **Content width:** 1024px (`max-w-5xl`) is the intended max content width for every section; this replaces "~1100–1200px" above. The user chose it on 2026-11-20 because wider lines would push the About and Experience text past a comfortable line length (~120 characters per line at 1152px).
+
+## Amendments (2026-11-20, user feedback during header/footer build)
+
+These supersede the matching text above. The implementation plan's Task 7 status block has the full detail.
+
+- **Resume:** "Download Resume" (hero) and the header's Resume button download the PDF as `Anmol-Verma-Resume.pdf` (HTML `download` attribute) instead of opening it in the browser. The file is still served at `/resume.pdf`.
+- **Header:** sticky, 64px tall, frosted background with a thin green-to-teal stripe on top. An "AV" monogram badge plus the name is the home link (the name stays; it is not replaced by "Home"). Section links About, Experience, Projects, Contact, and Resume as a green button with a download icon.
+- **Navigation on small screens:** instead of a stacked or hamburger menu, the header shows only Projects and Resume below 768px, so it fits on one line with no extra JavaScript. This replaces "Navigation collapses to a simple stacked or hamburger pattern on small screens".
+- **Hero height:** the hero is at least 85% of the screen height only on tablet and wider. On mobile it is as tall as its content, so there is no large empty gap above About.
+- **Touch screens:** header hover effects apply only on devices that can really hover, so nothing stays highlighted after a tap on a phone.
