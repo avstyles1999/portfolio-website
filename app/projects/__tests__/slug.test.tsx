@@ -30,4 +30,10 @@ describe("Case study page", () => {
       "/projects/network-operating-system"
     );
   });
+
+  it("uses the shared container with no narrower width caps, so left/right margins match", async () => {
+    const ui = await CaseStudyPage({ params: Promise.resolve({ slug: "prt-network-simulator" }) });
+    const { container } = render(ui);
+    expect(container.querySelector("[class*='max-w-2xl'],[class*='max-w-3xl'],[class*='max-w-4xl']")).toBeNull();
+  });
 });

@@ -43,19 +43,20 @@ export const projects: Project[] = [
     slug: "ai-accountant-platform",
     title: "AI Accountant Finance Platform",
     oneLiner: "A Zoho Creator platform that automates core accounting work, from invoice processing to bank reconciliation and monthly statements.",
-    techStack: ["Zoho Creator", "Deluge", "Zoho WorkDrive API", "Zoho Creator REST API"],
+    techStack: ["Zoho Creator", "Deluge", "Zoho WorkDrive API", "Zoho Creator REST API", "Tally XML"],
     standoutMetric: "Led the platform end to end; 90+ Deluge functions in the reconciliation pipeline",
     order: 3,
     overview:
-      "An AI-driven finance automation platform built on Zoho Creator that automates core accounting workflows: purchase invoice processing, sales invoice creation, bank statement ingestion and reconciliation, and monthly statement generation. I lead the project, personally built the entire bank statement ingestion and reconciliation pipeline, and implemented parts of the purchase invoice processing pipeline.",
+      "An AI-driven finance automation platform built on Zoho Creator that automates core accounting workflows: purchase invoice processing, sales invoice creation, bank statement ingestion and reconciliation, and monthly statement generation. I lead the project, personally built the entire bank statement ingestion and reconciliation pipeline, and built the two-level human review and Tally export stages of purchase invoice processing.",
     problem:
       "Accounting teams spend much of their time on repetitive, error-prone work: keying in purchase invoices, raising sales invoices, matching bank transactions to invoices, catching duplicates, and compiling monthly statements. Done by hand, this work is slow, inconsistent, and hard to audit when something needs to be traced back.",
     approach:
-      "As project lead, I set the platform's direction and coordinated delivery across its finance workflows. Hands-on, I built the bank statement ingestion and reconciliation pipeline end to end: 90+ Deluge functions covering statement ingestion, a multi-signal scoring engine for bank-to-invoice matching, payment allocation, duplicate-invoice detection, and multi-bank statement de-duplication, integrated with Zoho WorkDrive and Creator REST APIs. A centralized audit-event trail records every automated decision, so a CA-facing review view can verify or override matches with full context. I also implemented parts of the purchase invoice processing pipeline.",
+      "As project lead, I set the platform's direction and coordinated delivery across its finance workflows. Hands-on, I built the bank statement ingestion and reconciliation pipeline end to end: 90+ Deluge functions covering statement ingestion, a multi-signal scoring engine for bank-to-invoice matching, payment allocation, duplicate-invoice detection, and multi-bank statement de-duplication, integrated with Zoho WorkDrive and Creator REST APIs. A centralized audit-event trail records every automated decision, so a CA-facing review view can verify or override matches with full context. For purchase invoice processing, I built the pipeline and screens that take over once OCR has extracted the invoice data: a two-level review in which the first reviewer confirms the extraction is correct and the second verifies its financial correctness. Because the data is financial, nothing moves forward without explicit human approval. On approval, the platform generates a Tally XML voucher that the accountant exports straight into Tally.",
     impact: [
       "Automates major finance workflows: purchase invoices, sales invoices, bank reconciliation, and monthly statements.",
       "90+ Deluge functions in production covering bank statement ingestion, matching, de-duplication, and audit trail.",
       "Automated multi-signal scoring reduces manual bank-to-invoice matching effort.",
+      "Two-level human review gates every OCR-extracted purchase invoice before an approved Tally XML voucher is generated for export.",
     ],
   },
   {
@@ -85,16 +86,16 @@ export const projects: Project[] = [
     standoutMetric: "50-60% reduction in mean time to detection",
     order: 5,
     overview:
-      "A multi-component health monitoring and watchdog system covering the Network Operating System, vehicles, and operator/user-facing UIs, built to catch problems before they became incidents, with a dashboard where the team can view alerts and errors.",
+      "A multi-component health monitoring and watchdog system covering the Network Operating System, vehicles, and operator/user-facing UIs, built to catch problems before they became incidents, with an operator dashboard for checking system health on demand.",
     problem:
       "In a safety-critical, distributed vehicle system, failures in any one component (a vehicle, the NOS, or a UI) can go unnoticed until they cascade into a larger incident, and manual log review is too slow to catch issues in time to act.",
     approach:
-      "Designed a diagnostic and watchdog service in Python that performs automated log parsing across NOS, vehicle, and UI components, with alerting and remediation workflows wired directly into the detection pipeline so that known failure patterns trigger automated recovery actions rather than waiting on a human responder. A Node.js backend serves the collected alerts and errors to a React dashboard, giving the team one place to see system health across all components.",
+      "Designed a diagnostic and watchdog service in Python that performs automated log parsing across NOS, vehicle, and UI components, with alerting and remediation workflows wired directly into the detection pipeline so that known failure patterns trigger automated recovery actions rather than waiting on a human responder. A Node.js backend powers a React dashboard that shows the result of the last diagnostic check for every system, lets operators download the entire check history, and lets them trigger an on-demand diagnostic run to confirm everything is working before or during operations.",
     impact: [
       "Reduced mean time to detection (MTTD) by 50-60%.",
       "Reduced overall system downtime by ~50-60% through automated alerting and remediation.",
       "Enabled automated alerts and recovery actions across NOS, vehicles, and UIs.",
-      "React dashboard gives a single view of alerts and errors across all monitored components.",
+      "Operators see the last diagnostic result for every system in one place, can run an on-demand check at any time, and can download the full check history.",
     ],
   },
   {
@@ -109,9 +110,10 @@ export const projects: Project[] = [
     problem:
       "Post-trade analysts needed fast, accurate transaction cost metrics over millions of trade records per day, including correctly classifying complex order types like wheel orders, under tight regulatory and client reporting deadlines.",
     approach:
-      "Built the platform end to end: a Flask backend querying KDB+ (a column-store time-series database used heavily in trading infrastructure for its query performance over large tick/trade datasets) to keep analytics queries fast even over millions of daily trade records, and a React frontend surfacing TCA metrics to analysts. Improved the wheel-order detection logic specifically to reduce misclassification, which had been generating false positives in cost analysis.",
+      "Built the platform end to end: a Flask backend querying KDB+ (a column-store time-series database used heavily in trading infrastructure for its query performance over large tick/trade datasets) to keep analytics queries fast even over millions of daily trade records, and a React dashboard where analysts combine filters and sorting across multiple trade parameters to slice TCA metrics for their analysis, then export the result to Excel. Improved the wheel-order detection logic specifically to reduce misclassification, which had been generating false positives in cost analysis.",
     impact: [
       "Adopted by 20+ internal users for day-to-day post-trade analysis.",
+      "Combined multi-parameter filtering and sorting with Excel export let analysts take their analysis straight into their own reporting.",
       "Processed millions of trade records daily with low-latency query performance.",
       "Improved wheel-order classification accuracy by 20-30%, reducing false positives.",
     ],

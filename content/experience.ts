@@ -8,7 +8,7 @@ export const experience: ExperienceEntry[] = [
     highlights: [
       "Lead a cross-functional team of 4-5 engineers delivering production-grade, safety-critical transportation software; own sprint planning, code reviews, and CI pipelines.",
       "Built a safety-critical, constraint-aware routing engine in Python with core CBTC/APM protocol features, driving real-time control of 100+ concurrent PRT vehicles within a 200-300ms latency budget.",
-      "Lead an AI Accountant finance automation platform on Zoho Creator; personally built the bank statement ingestion and reconciliation pipeline and parts of purchase invoice processing.",
+      "Lead an AI Accountant finance automation platform on Zoho Creator; personally built the bank statement ingestion and reconciliation pipeline and the two-level review and Tally XML export stage of purchase invoice processing.",
       "Co-developed a browser-based PRT network simulator (Next.js/React/TypeScript) used directly in client pitches and fleet sizing.",
     ],
   },
