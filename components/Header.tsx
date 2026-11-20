@@ -44,7 +44,7 @@ export default function Header() {
           <a
             href="/resume.pdf"
             download="Anmol-Verma-Resume.pdf"
-            className="inline-flex items-center gap-1.5 rounded-full bg-brand-accent px-4 py-1.5 text-white shadow-sm transition hover:bg-brand-accentDark hover:shadow"
+            className="inline-flex items-center gap-1.5 rounded-full bg-brand-accent px-4 py-1.5 text-white shadow-sm transition [@media(hover:hover)]:hover:bg-brand-accentDark [@media(hover:hover)]:hover:shadow"
           >
             <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">
               <path d="M10.75 2.75a.75.75 0 0 0-1.5 0v8.69L6.28 8.47a.75.75 0 0 0-1.06 1.06l4.25 4.25a.75.75 0 0 0 1.06 0l4.25-4.25a.75.75 0 1 0-1.06-1.06l-2.97 2.97V2.75Z" />

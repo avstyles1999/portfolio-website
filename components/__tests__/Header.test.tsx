@@ -47,4 +47,11 @@ describe("Header", () => {
     expect(tokens.filter((t) => t.startsWith("group-hover:"))).toEqual([]);
     expect(tokens).toContain("[@media(hover:hover)]:group-hover:text-brand-accent");
   });
+
+  it("resume button only changes on hover on devices that really hover (no stuck dark green after a tap)", () => {
+    render(<Header />);
+    const tokens = screen.getByRole("link", { name: /resume/i }).className.split(/\s+/);
+    expect(tokens.filter((t) => t.startsWith("hover:"))).toEqual([]);
+    expect(tokens).toContain("[@media(hover:hover)]:hover:bg-brand-accentDark");
+  });
 });
