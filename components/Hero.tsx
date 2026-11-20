@@ -1,29 +1,30 @@
 import Link from "next/link";
+import { CONTAINER } from "./Section";
+
+const CTA =
+  "inline-flex items-center rounded-md bg-brand-accent px-5 py-3 text-white font-medium shadow-sm hover:bg-brand-accentDark hover:shadow transition";
 
 export default function Hero() {
   return (
-    <section className="flex min-h-[80vh] flex-col justify-center px-6 sm:px-12 max-w-5xl mx-auto">
-      <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">Anmol Verma</h1>
-      <p className="mt-3 text-lg sm:text-2xl text-brand-muted">
-        Team Lead, Software Development — Real-time &amp; Safety-Critical Systems
-      </p>
-      <p className="mt-6 max-w-2xl text-base sm:text-lg">
-        I build real-time, safety-critical systems — and lead the teams that ship them — alongside AI-driven
-        automation.
-      </p>
-      <div className="mt-8 flex flex-wrap gap-4">
-        <Link
-          href="#projects"
-          className="rounded-md bg-brand-accent px-5 py-3 text-white font-medium hover:bg-brand-accentDark transition-colors"
-        >
-          View Projects
-        </Link>
-        <Link
-          href="/resume.pdf"
-          className="rounded-md bg-brand-accent px-5 py-3 text-white font-medium hover:bg-brand-accentDark transition-colors"
-        >
-          Download Resume
-        </Link>
+    <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top_left,_#D1FAE5_0%,_transparent_55%)]">
+      <div className={`${CONTAINER} flex min-h-[85vh] flex-col justify-center py-24`}>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">Hello, I&apos;m</p>
+        <h1 className="mt-3 text-5xl sm:text-7xl font-extrabold tracking-tight">Anmol Verma</h1>
+        <p className="mt-4 text-lg sm:text-2xl font-medium text-brand-muted">
+          Team Lead, Software Development — Real-time &amp; Safety-Critical Systems
+        </p>
+        <p className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed">
+          I build real-time, safety-critical systems — and lead the teams that ship them — alongside AI-driven
+          automation.
+        </p>
+        <div className="mt-10 flex flex-wrap gap-4">
+          <Link href="#projects" className={CTA}>
+            View Projects
+          </Link>
+          <Link href="/resume.pdf" className={CTA}>
+            Download Resume
+          </Link>
+        </div>
       </div>
     </section>
   );

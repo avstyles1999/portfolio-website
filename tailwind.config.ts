@@ -13,6 +13,7 @@ const config: Config = {
           border: "#E5E7EB",
           accent: "#047857",
           accentDark: "#065F46",
+          accentSoft: "#ECFDF5",
         },
       },
       fontFamily: {

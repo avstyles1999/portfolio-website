@@ -1,18 +1,25 @@
 import { education } from "@/content/education";
+import Section from "./Section";
 
 export default function EducationAchievements() {
   return (
-    <section className="px-6 sm:px-12 max-w-3xl mx-auto py-16">
-      <h2 className="text-2xl font-bold mb-6">Education &amp; Achievements</h2>
-      <h3 className="font-semibold">{education.degree}</h3>
-      <p className="text-brand-muted text-sm">
-        {education.institution}, {education.location} · {education.dates}
-      </p>
-      <ul className="mt-4 space-y-2 list-disc list-inside text-sm sm:text-base">
-        {education.achievements.map((a) => (
-          <li key={a.title}>{a.title}</li>
-        ))}
-      </ul>
-    </section>
+    <Section id="education" eyebrow="Foundations" title="Education & Achievements" tone="surface">
+      <div className="max-w-3xl rounded-xl border border-brand-border bg-brand-bg p-6 sm:p-8">
+        <h3 className="font-semibold text-lg">{education.degree}</h3>
+        <p className="mt-0.5 text-sm text-brand-muted">
+          {education.institution}, {education.location} · {education.dates}
+        </p>
+        <ul className="mt-5 space-y-3 text-sm sm:text-base">
+          {education.achievements.map((a) => (
+            <li key={a.title} className="flex gap-3">
+              <span aria-hidden className="text-brand-accent">
+                ★
+              </span>
+              <span>{a.title}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Section>
   );
 }
