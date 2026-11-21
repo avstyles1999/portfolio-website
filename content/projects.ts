@@ -34,7 +34,7 @@ export const projects: Project[] = [
     approach:
       "Designed a constraint-aware routing engine that evaluates all feasible paths in real time using distance, ETA, traffic density, and blockages, enforcing strict route adherence to prevent collisions. Implemented core CBTC and APM protocol features to drive real-time vehicle control within a 200-300ms latency budget, which required careful attention to computational cost per routing decision at scale (100+ concurrent vehicles).",
     impact: [
-      "Reduced route conflicts and idle time by 30-40%.",
+      "Reduced route conflicts, idle time, and average trip delays by 30-40%.",
       "Real-time vehicle control latency held under 200-300ms.",
       "Handles 100+ concurrent vehicle path computations.",
     ],
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     slug: "network-operating-system",
     title: "Network Operating System",
     oneLiner: "The central brain of the PRT network: serving ride requests, dispatching pods, and running fleet operations.",
-    techStack: ["Node.js", "Express", "MongoDB"],
+    techStack: ["Node.js", "Express", "MongoDB", "Raspberry Pi"],
     standoutMetric: "Near-zero hazardous incidents across simulations and trials",
     order: 4,
     overview:
@@ -75,6 +75,7 @@ export const projects: Project[] = [
     impact: [
       "Serves concurrent passenger requests and dispatches the best available pod to each one.",
       "Reduced routing conflicts by 30-40% and improved throughput via zone-based partitioning.",
+      "Split the site into CBTC-style zones, each run by its own Network Zone Controller on a Raspberry Pi edge device that links the NOS to every vehicle, port, and charger in its zone.",
       "Automated charging and maintenance scheduling contributed to near-zero hazardous incidents across simulations and trials.",
     ],
   },

@@ -7,7 +7,7 @@ describe("Hero", () => {
     render(<Hero />);
     expect(screen.getByText(/Anmol Verma/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /view projects/i })).toHaveAttribute("href", "#projects");
-    expect(screen.getByRole("link", { name: /download resume/i })).toHaveAttribute("href", "/resume.pdf");
+    expect(screen.getByRole("link", { name: /download resume/i })).toHaveAttribute("href", "/Anmol-Verma-CV.pdf");
   });
 });
 
@@ -31,7 +31,7 @@ describe("Hero download + mobile spacing", () => {
     render(<Hero />);
     expect(screen.getByRole("link", { name: /download resume/i })).toHaveAttribute(
       "download",
-      "Anmol-Verma-Resume.pdf",
+      "Anmol-Verma-CV.pdf",
     );
   });
 

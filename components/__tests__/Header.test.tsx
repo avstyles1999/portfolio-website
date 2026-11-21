@@ -6,12 +6,12 @@ describe("Header", () => {
   it("renders a home link and a resume link", () => {
     render(<Header />);
     expect(screen.getByRole("link", { name: /anmol verma/i })).toHaveAttribute("href", "/");
-    expect(screen.getByRole("link", { name: /resume/i })).toHaveAttribute("href", "/resume.pdf");
+    expect(screen.getByRole("link", { name: /resume/i })).toHaveAttribute("href", "/Anmol-Verma-CV.pdf");
   });
 
   it("resume link downloads the file instead of opening it", () => {
     render(<Header />);
-    expect(screen.getByRole("link", { name: /resume/i })).toHaveAttribute("download", "Anmol-Verma-Resume.pdf");
+    expect(screen.getByRole("link", { name: /resume/i })).toHaveAttribute("download", "Anmol-Verma-CV.pdf");
   });
 
   it("links to the main homepage sections", () => {

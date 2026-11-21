@@ -42,8 +42,8 @@ export default function Header() {
             </Link>
           ))}
           <a
-            href="/resume.pdf"
-            download="Anmol-Verma-Resume.pdf"
+            href="/Anmol-Verma-CV.pdf"
+            download="Anmol-Verma-CV.pdf"
             className="inline-flex items-center gap-1.5 rounded-full bg-brand-accent px-4 py-1.5 text-white shadow-sm transition [@media(hover:hover)]:hover:bg-brand-accentDark [@media(hover:hover)]:hover:shadow"
           >
             <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">

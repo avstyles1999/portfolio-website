@@ -21,7 +21,7 @@ export default function Hero() {
           <Link href="#projects" className={CTA}>
             View Projects
           </Link>
-          <a href="/resume.pdf" download="Anmol-Verma-Resume.pdf" className={CTA}>
+          <a href="/Anmol-Verma-CV.pdf" download="Anmol-Verma-CV.pdf" className={CTA}>
             Download Resume
           </a>
         </div>
